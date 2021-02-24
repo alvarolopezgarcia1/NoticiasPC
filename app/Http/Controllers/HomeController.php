@@ -34,11 +34,11 @@ class HomeController extends Controller
 
     public function wellcome(){
 
-    $noticias = Noticia::orderBy('created_at','desc')->take(3)->get();
-    $articulos = Articulo::orderBy('created_at','desc')->take(3)->get();
-    $analisis = Analisis::orderBy('created_at','desc')->take(3)->get();
+        $noticias = Noticia::orderBy('created_at','desc')->take(3)->get();
+        $articulos = Articulo::orderBy('created_at','desc')->take(3)->get();
+        $analisis = Analisis::orderBy('created_at','desc')->take(3)->get();
 
-    return view('wellcome', compact('noticias', 'articulos', 'analisis') );
+        return view('wellcome', compact('noticias', 'articulos', 'analisis') );
 
     }
 }

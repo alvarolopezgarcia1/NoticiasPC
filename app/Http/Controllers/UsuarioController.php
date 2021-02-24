@@ -15,32 +15,32 @@ class UsuarioController extends Controller
 
    //Muestra todas las noticias
     public function index(){
-       
+     
         $usuarios = User::orderBy('name','asc')->simplePaginate(50);
 
         $usuario = User::all();
-    
+        
         return view('usuarios/index', compact('usuarios','usuario') );
 
     }
 
- public function buscador(Request $request){
-       
+    public function buscador(Request $request){
+     
         $usuarios = User::where("name", 'like', $request->texto."%")->take(10)->get();
 
         return view('usuarios.paginas', compact('usuarios') );
 
     }    
 
- public static function destroyUsuario($id){
+    public static function destroyUsuario($id){
         $usuarios = User::find($id);
         $usuarios->delete();
 
         return redirect('/usuariosIndex');
 
- }   
+    }   
 
-  public function showUsuario($id){
+    public function showUsuario($id){
 
         $usuario = User::find($id);
 
@@ -50,23 +50,23 @@ class UsuarioController extends Controller
     }
 
     public static function updateUsuario(Request $request){
-    
+        
         $request->validate([
-           
-           'name' => 'required',
-           'email' => 'required',
-           'rol' => 'required',        
-        ]);
+         
+         'name' => 'required',
+         'email' => 'required',
+         'rol' => 'required',        
+     ]);
 
-            $updateUsuario = User::find($request->input('idUsu'));
-            $id = $request->input('idUsu');
-            $updateUsuario->name = $request->input('name');
-            $updateUsuario->email = $request->input('email');
-            $updateUsuario->rol = $request->input('rol');         
-            
-    
-            $updateUsuario->save();
-            
+        $updateUsuario = User::find($request->input('idUsu'));
+        $id = $request->input('idUsu');
+        $updateUsuario->name = $request->input('name');
+        $updateUsuario->email = $request->input('email');
+        $updateUsuario->rol = $request->input('rol');         
+        
+        
+        $updateUsuario->save();
+        
 
         return redirect()->route('usuario.show', ['id' => $id]);
 

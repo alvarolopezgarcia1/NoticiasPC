@@ -20,9 +20,16 @@ class Analisis extends Model
     }
 
     
-      public function categorias(){
+    public function categorias(){
 
         return $this->belongsTo('App\Models\Categoria' , 'idCat');
+
+    }
+
+
+    public function comentarios(){
+
+        return $this->hasMany('App\Models\Comentario_Analisis', 'idAna');
 
     }
 

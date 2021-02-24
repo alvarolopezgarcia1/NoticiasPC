@@ -13,6 +13,8 @@ use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\AnalisisController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CursoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,12 @@ Route::get('/destroyNoticia/{id}', [NoticiaController::class, 'destroyNoticia'])
 //Mostrar una noticia
 Route::get('/noticiaShow/{id}' , [NoticiaController::class, 'showNoticia'])->name('noticia.show')->middleware('auth');
 Route::post('/updateNoticia', [NoticiaController::class, 'updateNoticia'])->name('noticia.update')->middleware('auth');
+//Crear Comentario
+Route::post('/createComNoticia', [NoticiaController::class, 'createComNot'])->name('comentarioNoticia.create')->middleware('auth');
+//Borrar Comentario 
+Route::get('/destroyComNoticia/{id}/{idNot}', [NoticiaController::class, 'destroyComNoticia'])->name('comentarioNoticia.delete')->middleware('auth');
+//Update Comentario
+Route::post('/updateComNoticia', [NoticiaController::class, 'updateComNoticia'])->name('comentarioNoticia.update')->middleware('auth');
 
 
 // -- ARTICULO -- 
@@ -51,6 +59,12 @@ Route::post('/createArticulo', [ArticuloController::class, 'createArticulo'])->n
 Route::get('/destroyArticulo/{id}', [ArticuloController::class, 'destroyArticulo'])->name('articulo.delete')->middleware('auth');
 //actualizar
 Route::post('/updateArticulo', [ArticuloController::class, 'updateArticulo'])->name('articulo.update')->middleware('auth');
+//Crear Comentario
+Route::post('/createComArticulo', [ArticuloController::class, 'createComArticulo'])->name('comentarioArticulo.create')->middleware('auth');
+//Borrar Comentario 
+Route::get('/destroyComArticulo/{id}/{idArt}', [ArticuloController::class, 'destroyComArticulo'])->name('comentarioArticulo.delete')->middleware('auth');
+//Update Comentario
+Route::post('/updateComArticulo', [ArticuloController::class, 'updateComArticulo'])->name('comentarioArticulo.update')->middleware('auth');
 
 
 // -- ANALISIS -- 
@@ -63,10 +77,16 @@ Route::post('/createAnalisis', [AnalisisController::class, 'createAnalisis'])->n
 //Borrar analisis
 Route::get('/destroyAnalisis/{id}', [AnalisisController::class, 'destroyAnalisis'])->name('analisis.delete')->middleware('auth','admin');
 Route::post('/updateAnalisis', [AnalisisController::class, 'updateAnalisis'])->name('analisis.update')->middleware('auth');
+//Crear Comentario
+Route::post('/createComAnalisis', [AnalisisController::class, 'createComAnalisis'])->name('comentarioAnalisis.create')->middleware('auth');
+//Borrar Comentario 
+Route::get('/destroyComAnalisis/{id}/{idAna}', [AnalisisController::class, 'destroyComAnalisis'])->name('comentarioAnalisis.delete')->middleware('auth');
+//Update Comentario
+Route::post('/updateComAnalisis', [AnalisisController::class, 'updateComAnalisis'])->name('comentarioAnalisis.update')->middleware('auth');
 
 
 // -- PAGINA PRINCIPAL --
-Route::get('/', [HomeController::class, 'wellcome'])->middleware('auth');
+Route::get('/', [NoticiaController::class, 'index'])->middleware('auth');
 
 // -- BUSCADOR--
 Route::get('/noticiaIndex/buscador' , [NoticiaController::class, 'buscador'])->middleware('auth');
@@ -82,5 +102,19 @@ Route::get('/destroyUsuario/{id}', [UsuarioController::class, 'destroyUsuario'])
 Route::get('usuarioShow/{id}' , [UsuarioController::class, 'showUsuario'])->name('usuario.show')->middleware('auth');
 //actualizar
 Route::post('/updateUsuario', [UsuarioController::class, 'updateUsuario'])->name('usuario.update')->middleware('auth');
+
+/*CARRITO*/
+Route::post('/cart-add', [CartController::class, 'add'])->name('cart.add')->middleware('auth');
+Route::get('/cart-checkout',[CartController::class, 'cart'])->name('cart.checkout')->middleware('auth');
+Route::post('/cart-clear',  [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
+Route::post('/cart-removeitem',  [CartController::class, 'removeitem'])->name('cart.removeitem')->middleware('auth');
+
+/*CURSOS*/
+Route::get('/showCursos', [CursoController::class, 'showCurso'] )->middleware('auth');
+Route::get('/cursoDetalles/{id}', [CursoController::class, 'showDetalles'] )->middleware('auth');
+Route::get('/cursoCarrito/{id}', [CursoController::class, 'addCarrito'] )->middleware('auth');
+Route::get('/compraRealizada', [CursoController::class, 'compraRealizada'] )->middleware('auth');
+
+
 
 

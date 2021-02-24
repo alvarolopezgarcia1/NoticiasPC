@@ -3,7 +3,7 @@
 
 
  @foreach($noticias as $noticia )
-<div class="card" style="width: 18rem;">
+<div class="card">
 
    
         <img class="card-img-top" src="{{$noticia->imagen}}" alt="Card image cap">
