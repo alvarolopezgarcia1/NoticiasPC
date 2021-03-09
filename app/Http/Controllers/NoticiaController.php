@@ -18,7 +18,7 @@ class NoticiaController extends Controller
     //Muestra todas las noticias
     public function index(){
      
-        $noticias = Noticia::orderBy('created_at','desc')->simplePaginate(9);
+        $noticias = Noticia::orderBy('created_at','desc')->simplePaginate(6);
 
         $categorias = Categoria::all();
         
@@ -42,7 +42,7 @@ class NoticiaController extends Controller
 
         $com = Noticia::find($id)->comentarios;
 
-        /*$miarray = array();
+        $miarray = array();
 
 
 
@@ -52,18 +52,18 @@ class NoticiaController extends Controller
 
         $com2 = Comentario_Noticia::find($a)->usuario;
 
-        $tuputamadre = $com2->name;
+        $nom = $com2->name;
 
-        $miarray[] = $tuputamadre;
+        $miarray[] = $nom;
 
         
 
         }
 
-        var_dump($miarray);*/
+        var_dump($miarray);
 
 
-        return view('noticias/showNoticia', compact('nombre','noticia', 'categorias','nombreCategoria', 'com'));
+        return view('noticias/showNoticia', compact('nombre','noticia', 'categorias','nombreCategoria', 'com', 'miarray' ));
 
     }
 

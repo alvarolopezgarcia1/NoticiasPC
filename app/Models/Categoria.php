@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
-     //relaciona con la tabla
+    //relates to the categories table
     protected $table = 'categorias';
-    //relaciona con la id personalizada
+    
+    //relates to custom id
     protected $primaryKey = 'idCat';
+    
     use HasFactory;
 }

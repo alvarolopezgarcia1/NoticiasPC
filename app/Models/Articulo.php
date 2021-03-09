@@ -7,29 +7,35 @@ use Illuminate\Database\Eloquent\Model;
 
 class Articulo extends Model
 {
-     //relaciona con la tabla 
+  
+  //relates to the article table 
   protected $table = 'articulos';
-    //relaciona con la id personalizada
+  
+  //relates to custom id
   protected $primaryKey = 'idArt';
-  use HasFactory;
-
-     //relaciona con la tabla usuarios  
+  
+ 
+  //relates to the users table  
   public function usuarios(){
 
     return $this->belongsTo('App\Models\User' , 'idUsu');
 
   }
 
+  //relates to the categories table
   public function categorias(){
 
     return $this->belongsTo('App\Models\Categoria' , 'idCat');
 
   }
 
+  //relates to the comments table
   public function comentarios(){
 
     return $this->hasMany('App\Models\Comentario_Articulo', 'idArt');
 
   }
+
+  use HasFactory;
 
 }

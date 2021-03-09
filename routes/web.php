@@ -31,85 +31,89 @@ use App\Http\Controllers\CursoController;
 Route::get('/home', [HomeController::class, 'wellcome'])->middleware('auth');
 
 Auth::routes();
-//-- NOTICIA --
-//Todas las noticias
+//-- NEWS --
+//All the news
 Route::get('/noticiaIndex', [NoticiaController::class, 'index'])->middleware('auth');
+//Create a news
 Route::post('/createNoticia', [NoticiaController::class, 'createNoticia'])->name('noticia.create')->middleware('auth');
-//Borrar noticia
+//Delete a news
 Route::get('/destroyNoticia/{id}', [NoticiaController::class, 'destroyNoticia'])->name('noticia.delete')->middleware('auth');
-//Mostrar una noticia
+//Show a news
 Route::get('/noticiaShow/{id}' , [NoticiaController::class, 'showNoticia'])->name('noticia.show')->middleware('auth');
 Route::post('/updateNoticia', [NoticiaController::class, 'updateNoticia'])->name('noticia.update')->middleware('auth');
-//Crear Comentario
+//Create a comment
 Route::post('/createComNoticia', [NoticiaController::class, 'createComNot'])->name('comentarioNoticia.create')->middleware('auth');
-//Borrar Comentario 
+//Delete a comment 
 Route::get('/destroyComNoticia/{id}/{idNot}', [NoticiaController::class, 'destroyComNoticia'])->name('comentarioNoticia.delete')->middleware('auth');
-//Update Comentario
+//Update a comment
 Route::post('/updateComNoticia', [NoticiaController::class, 'updateComNoticia'])->name('comentarioNoticia.update')->middleware('auth');
 
 
-// -- ARTICULO -- 
-//Todos los articulos
+// -- ARTICLE -- 
+//all articles
 Route::get('/articuloIndex', [ArticuloController::class, 'index'])->middleware('auth');
-//Mostrar un articulo
+//show an article
 Route::get('/articuloShow/{id}' , [ArticuloController::class, 'showArticulo'])->name('articulo.show')->middleware('auth');
-//Crear articulo
+//create an article
 Route::post('/createArticulo', [ArticuloController::class, 'createArticulo'])->name('articulo.create')->middleware('auth');
-//Borrar articulo
+//delete an article
 Route::get('/destroyArticulo/{id}', [ArticuloController::class, 'destroyArticulo'])->name('articulo.delete')->middleware('auth');
-//actualizar
+//update an article
 Route::post('/updateArticulo', [ArticuloController::class, 'updateArticulo'])->name('articulo.update')->middleware('auth');
-//Crear Comentario
+//Create a comment
 Route::post('/createComArticulo', [ArticuloController::class, 'createComArticulo'])->name('comentarioArticulo.create')->middleware('auth');
-//Borrar Comentario 
+//Delete a comment 
 Route::get('/destroyComArticulo/{id}/{idArt}', [ArticuloController::class, 'destroyComArticulo'])->name('comentarioArticulo.delete')->middleware('auth');
-//Update Comentario
+//Update a comment
 Route::post('/updateComArticulo', [ArticuloController::class, 'updateComArticulo'])->name('comentarioArticulo.update')->middleware('auth');
 
 
 // -- ANALISIS -- 
-//Todos los analisis
+//All analysis
 Route::get('/analisisIndex', [AnalisisController::class, 'index'])->middleware('auth');
-//Mostrar un analisis
+//show an analysis
 Route::get('analisisShow/{id}' , [AnalisisController::class, 'showAnalisis'])->name('analisis.show')->middleware('auth');
-//Crear analisis
+//create an analysis
 Route::post('/createAnalisis', [AnalisisController::class, 'createAnalisis'])->name('analisis.create')->middleware('auth');
-//Borrar analisis
+//delete an analysis
 Route::get('/destroyAnalisis/{id}', [AnalisisController::class, 'destroyAnalisis'])->name('analisis.delete')->middleware('auth','admin');
+//update an analysis
 Route::post('/updateAnalisis', [AnalisisController::class, 'updateAnalisis'])->name('analisis.update')->middleware('auth');
-//Crear Comentario
+//Create a comment
 Route::post('/createComAnalisis', [AnalisisController::class, 'createComAnalisis'])->name('comentarioAnalisis.create')->middleware('auth');
-//Borrar Comentario 
+//Delete a comment 
 Route::get('/destroyComAnalisis/{id}/{idAna}', [AnalisisController::class, 'destroyComAnalisis'])->name('comentarioAnalisis.delete')->middleware('auth');
-//Update Comentario
+//Update a comment
 Route::post('/updateComAnalisis', [AnalisisController::class, 'updateComAnalisis'])->name('comentarioAnalisis.update')->middleware('auth');
 
 
-// -- PAGINA PRINCIPAL --
+// -- Homepage --
 Route::get('/', [NoticiaController::class, 'index'])->middleware('auth');
 
-// -- BUSCADOR--
+// -- SEEKER --
 Route::get('/noticiaIndex/buscador' , [NoticiaController::class, 'buscador'])->middleware('auth');
 Route::get('/analisisIndex/buscador' , [AnalisisController::class, 'buscador'])->middleware('auth');
 Route::get('/articuloIndex/buscador' , [ArticuloController::class, 'buscador'])->middleware('auth');
 Route::get('/usuarioIndex/buscador' , [UsuarioController::class, 'buscador'])->middleware('auth');
 
 
-// -- USUARIOS --
+// -- USERS --
+//Show users
 Route::get('/usuariosIndex' , [UsuarioController::class, 'index'])->middleware('admin');
+//Delete user
 Route::get('/destroyUsuario/{id}', [UsuarioController::class, 'destroyUsuario'])->name('usuario.delete')->middleware('admin');
-
+//Show a user
 Route::get('usuarioShow/{id}' , [UsuarioController::class, 'showUsuario'])->name('usuario.show')->middleware('auth');
-//actualizar
+//Update a user
 Route::post('/updateUsuario', [UsuarioController::class, 'updateUsuario'])->name('usuario.update')->middleware('auth');
 
-/*CARRITO*/
+// -- Shopping cart --
 Route::post('/cart-add', [CartController::class, 'add'])->name('cart.add')->middleware('auth');
 Route::get('/cart-checkout',[CartController::class, 'cart'])->name('cart.checkout')->middleware('auth');
 Route::post('/cart-clear',  [CartController::class, 'clear'])->name('cart.clear')->middleware('auth');
 Route::post('/cart-removeitem',  [CartController::class, 'removeitem'])->name('cart.removeitem')->middleware('auth');
 
-/*CURSOS*/
+/*Courses*/
 Route::get('/showCursos', [CursoController::class, 'showCurso'] )->middleware('auth');
 Route::get('/cursoDetalles/{id}', [CursoController::class, 'showDetalles'] )->middleware('auth');
 Route::get('/cursoCarrito/{id}', [CursoController::class, 'addCarrito'] )->middleware('auth');

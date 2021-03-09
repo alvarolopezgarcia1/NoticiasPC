@@ -26,7 +26,8 @@
                 <div class="card-body">
                     <img class="card-img-top" src="{{$curso->foto}}" alt="Card image cap">
                     <h5 class="card-title">{{ $curso->nombre }}</h5>
-                    <p><strong>{{ $curso->precio }} €</strong></p>                        
+                    
+
                 </div>
                 <form action="{{route('cart.add')}}" method="post" style="margin : 3vh;">
                     @csrf

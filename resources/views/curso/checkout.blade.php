@@ -12,9 +12,9 @@
         </button>
     </div>
     <div class="row" style="margin : 5vh;">
-     <div class="col-sm-12">
-         @if (count(Cart::getContent()))
-         <table class="table table-striped">
+       <div class="col-sm-12">
+           @if (count(Cart::getContent()))
+           <table class="table table-striped">
             <thead>
                 <th>ID</th>
                 <th>NOMBRE</th>

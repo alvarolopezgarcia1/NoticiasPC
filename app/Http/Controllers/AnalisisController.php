@@ -12,7 +12,7 @@ use App\Models\Comentario_Analisis;
 
 class AnalisisController extends Controller
 {
-//muestra todos los analisis    
+//see all the analyzes
   public function index(){
     $analisis = Analisis::orderBy('created_at','desc')->simplePaginate(9);
 
@@ -22,7 +22,7 @@ class AnalisisController extends Controller
     return view('analisis/index', compact('analisis', 'categorias') );
 
   }
-//Muestra un analsis
+//See an analysis
   public function showAnalisis($id){
 
            //saca el nombre del autor
@@ -40,8 +40,7 @@ class AnalisisController extends Controller
     return view('analisis/showAnalisis', compact('analisis', 'nombre','nombreCategoria','categorias', 'com'));
 
   }
-
-//buscador    
+// Create an analysis   
   public function buscador(Request $request){
    
     $analisis = Analisis::where("titulo", 'like', $request->texto."%")->take(10)->get();
@@ -77,7 +76,7 @@ class AnalisisController extends Controller
     return redirect('/analisisIndex');
 
   }
-
+//Delete an analysis
   public static function destroyAnalisis($id){
     $analisis = analisis::find($id);
     $analisis->delete();
@@ -85,7 +84,7 @@ class AnalisisController extends Controller
     return redirect('/analisisIndex');
 
   }
-
+//Update an analysis
   public static function updateAnalisis(Request $request){
     $request->validate([
      
@@ -113,6 +112,7 @@ class AnalisisController extends Controller
 
   }
 
+//Create an analysis
   public static function createComAnalisis(Request $request){
    
     $request->validate([
@@ -138,7 +138,7 @@ class AnalisisController extends Controller
 
   }
 
-
+//Destroy an analysis
   public static function destroyComAnalisis($id, $idAna){
     $comentarioAnalisis = Comentario_Analisis::find($id);
     $comentarioAnalisis->delete();

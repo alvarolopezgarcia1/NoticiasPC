@@ -9,7 +9,7 @@ use App\Models\Curso;
 
 class CartController extends Controller
 {
-    
+    //Function to add courses to cart
     public function add(Request $request){
      
         $curso = Curso::find($request->id);
@@ -26,7 +26,6 @@ class CartController extends Controller
         return back()->with('success',"$curso->nombre Curso agregado al carrito correctamente");
         
     }
-
     public function cart(){
         $cart = Cart::getContent();
         $total = 0;
@@ -36,6 +35,7 @@ class CartController extends Controller
         return view('/curso/checkout',compact('total'));
     }
 
+    //Remove course from cart
     public function removeitem(Request $request) {
         //$producto = Producto::where('id', $request->id)->firstOrFail();
         Cart::remove([
@@ -46,7 +46,7 @@ class CartController extends Controller
 
     public function clear(){
         Cart::clear();
-        return back()->with('success',"The shopping cart has successfully beed added to the shopping cart!");
+        return back()->with('success',"¡El carrito de compras se ha agregado correctamente al carrito de compras!");
     }
 
 }

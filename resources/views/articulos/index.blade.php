@@ -45,7 +45,7 @@
             </div>
         </div>
         <div class="row">
-           <div class="col-md-4">
+         <div class="col-md-4">
             <label for="idCat">Categoria</label>
             <select type="integer" class="form-control" id="idCat" name="idCat"required>
                 @foreach($categorias as $categoria)
@@ -79,15 +79,15 @@
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/-yCN9J6f_eM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="carousel-item">
-                               <iframe width="560" height="315" src="https://www.youtube.com/embed/c1Y77FCYmMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
+                             <iframe width="560" height="315" src="https://www.youtube.com/embed/c1Y77FCYmMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
 
-       <div class = "buscador" style = "width: 72vh; margin : 0 auto"> 
+     <div class = "buscador" style = "width: 72vh; margin : 0 auto"> 
 
         <div class = "input-group" >
 
@@ -100,13 +100,14 @@
 
     @include ('articulos.paginas')
 
+ <div style='text-align:center'> {{ $articulo->links() }} </div>
+
 </div>
 
 
 
 </div>     
 
-{{ $articulo->links() }}
 
 </div>
 

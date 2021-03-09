@@ -7,26 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Analisis extends Model
 {
-     //relaciona con la tabla
+    //relate to the analysis table
     protected $table = 'analisis';
-    //relaciona con la id personalizada
+
+   //relate to custom id
     protected $primaryKey = 'idAna';
 
-    //relaciona con la tabla usuarios  
+    
+    //relates to the users table
     public function usuarios(){
 
         return $this->belongsTo('App\Models\User' , 'idUsu');
 
     }
 
-    
+    //relates to the categories table
     public function categorias(){
 
         return $this->belongsTo('App\Models\Categoria' , 'idCat');
 
     }
 
-
+    //relates to the comments table
     public function comentarios(){
 
         return $this->hasMany('App\Models\Comentario_Analisis', 'idAna');

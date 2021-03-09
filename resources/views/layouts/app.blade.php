@@ -20,21 +20,29 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
 
+
+     <link rel="shortcut icon" type="image/png" href="{{ asset('../imagen/favicon.jpg') }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ asset('../imagen/favicon.jpg') }}">
+
 </head>
 
 
 <body id = "body">
-   <img class="bannerIzq" src="../imagen/banner2.jpg">
-   <img class="bannerDer" src="../imagen/banner2.jpg">
-    <div id = "cuerpo">
+ <img class="bannerIzq" src="../imagen/banner2.jpg">
+ <img class="bannerDer" src="../imagen/banner2.jpg">
+ <div id = "cuerpo">
     <div id= "app" >
         <div id = "cuerpo2" >
 
             <aside class="responsive-banner">
-                <img src="https://sites.google.com/site/hardwarehcwiki/_/rsrc/1458755264935/procesadores/banner-hardware.jpg" />
+                <img src="https://24h24l.org/images/banner-hardware.png" style = "height: : 100px; height: 215px;  object-fit: cover;" />
             </aside>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
+                    <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+  </a>
                     <a class="navbar-brand" href="/noticiaIndex">
                         {{ config('app.name', 'Laravel') }}
                     </a>

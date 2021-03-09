@@ -7,21 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comentario_Articulo extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-       protected $table = 'comentario_articulo';
+	//relates to the article_comment table
+	protected $table = 'comentario_articulo';
 
+	//relates to the user table
+	public function usuario(){
 
-public function usuario(){
+		return $this->belongsTo('App\Models\User' , 'idUsu');
 
-        return $this->belongsTo('App\Models\User' , 'idUsu');
+	}
 
-    }
+	//relates to the article table
+	public function articulo(){
 
-public function articulo(){
+		return $this->hasMany('App\Models\Articulo' , 'idArt');
 
-        return $this->hasMany('App\Models\Articulo' , 'idArt');
-
-    }    
+	}    
 
 }

@@ -13,9 +13,9 @@ use App\Models\User;
 class UsuarioController extends Controller
 {
 
-   //Muestra todas las noticias
+   //Show all users
     public function index(){
-     
+       
         $usuarios = User::orderBy('name','asc')->simplePaginate(50);
 
         $usuario = User::all();
@@ -24,14 +24,16 @@ class UsuarioController extends Controller
 
     }
 
+    //seeker
     public function buscador(Request $request){
-     
+       
         $usuarios = User::where("name", 'like', $request->texto."%")->take(10)->get();
 
         return view('usuarios.paginas', compact('usuarios') );
 
     }    
 
+    //delete a user
     public static function destroyUsuario($id){
         $usuarios = User::find($id);
         $usuarios->delete();
@@ -40,6 +42,7 @@ class UsuarioController extends Controller
 
     }   
 
+    //show a user
     public function showUsuario($id){
 
         $usuario = User::find($id);
@@ -49,14 +52,15 @@ class UsuarioController extends Controller
 
     }
 
+    //update a user
     public static function updateUsuario(Request $request){
         
         $request->validate([
-         
-         'name' => 'required',
-         'email' => 'required',
-         'rol' => 'required',        
-     ]);
+           
+           'name' => 'required',
+           'email' => 'required',
+           'rol' => 'required',        
+       ]);
 
         $updateUsuario = User::find($request->input('idUsu'));
         $id = $request->input('idUsu');

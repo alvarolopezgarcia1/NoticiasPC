@@ -7,19 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comentario_Analisis extends Model
 {
-    use HasFactory;
+	
+    //relates to the comment_analysis table
+	protected $table = 'comentario_analisis';
 
-    protected $table = 'comentario_analisis';
+	//relates to the user table
+	public function usuario(){
 
-public function usuario(){
+		return $this->belongsTo('App\Models\User' , 'idUsu');
 
-        return $this->belongsTo('App\Models\User' , 'idUsu');
+	}
 
-    }
+	//relates to the analysis table
+	public function analisis(){
 
-public function analisis(){
+		return $this->hasMany('App\Models\Analisis' , 'idAna');
 
-        return $this->hasMany('App\Models\Analisis' , 'idAna');
+	}    
 
-    }    
+	use HasFactory;
 }

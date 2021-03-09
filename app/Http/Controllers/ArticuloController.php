@@ -23,8 +23,7 @@ class ArticuloController extends Controller
     return view('articulos/index', compact('articulo', 'categorias') );
 
   }
-
- //Muestra un articulo
+//Show an article
   public function showArticulo($id){
 
     $articulo = Articulo::find($id);
@@ -43,7 +42,8 @@ class ArticuloController extends Controller
     return view('articulos/showArticulo', compact('articulo', 'nombre', 'nombreCategoria', 'categorias', 'com'));
 
   }
-    //buscador    
+  
+  //Seeker   
   public function buscador(Request $request){
    
     $articulo = Articulo::where("titulo", 'like', $request->texto."%")->take(10)->get();
@@ -52,6 +52,7 @@ class ArticuloController extends Controller
 
   }
 
+ //Crreate an article
   public static function createArticulo(Request $request){
    
     $request->validate([
@@ -77,7 +78,7 @@ class ArticuloController extends Controller
 
   }
 
-
+  //delete an article
   public static function destroyArticulo($id){
     $articulo = articulo::find($id);
     $articulo->delete();
@@ -86,6 +87,7 @@ class ArticuloController extends Controller
 
   }
 
+  //update an article
   public static function updateArticulo(Request $request){
     $request->validate([
      
@@ -112,6 +114,7 @@ class ArticuloController extends Controller
 
   }
 
+  //create an article
   public static function createComArticulo(Request $request){
    
     $request->validate([
@@ -138,7 +141,7 @@ class ArticuloController extends Controller
 
   }
 
-
+  //destroy an article
   public static function destroyComArticulo($id, $idArt){
     $comentarioArticulo = Comentario_Articulo::find($id);
     $comentarioArticulo->delete();

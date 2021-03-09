@@ -2,12 +2,12 @@
 
 
 @section("content")
- <div class="row">
+<div class="row">
 
-          
-           Se ha realizado su compra correctamente
+	
+	Se ha realizado su compra correctamente
 
- 
-       
-    </div>
+	
+	
+</div>
 @endsection

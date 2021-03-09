@@ -8,26 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 
 class Noticia extends Model
 {
-    //relaciona con la tabla noticias
+    //relates to the news table
     protected $table = 'noticias';
-    //relaciona con la id personalizada
+    
+    //relates to custom id
     protected $primaryKey = 'idNot';
     
     
-    //relaciona con la tabla usuario
+    //relates to the user table
     public function usuarios(){
 
         return $this->belongsTo('App\Models\User' , 'idUsu');
 
     }
 
-        public function categorias(){
+    //relates to the categories table
+    public function categorias(){
 
         return $this->belongsTo('App\Models\Categoria' , 'idCat');
 
     }
 
-        public function comentarios(){
+    //relates to the comments table
+    public function comentarios(){
 
         return $this->hasMany('App\Models\Comentario_Noticia', 'idNot');
 
