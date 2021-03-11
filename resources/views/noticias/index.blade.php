@@ -89,7 +89,7 @@
        </div>
    </div>
 
-   <div class = "buscador" style = "width: 72vh; margin : 0 auto"> 
+   <div class = "buscador"> 
 
     <div class = "input-group" >
 

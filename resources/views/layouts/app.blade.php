@@ -22,7 +22,7 @@
 
 
      <link rel="shortcut icon" type="image/png" href="{{ asset('../imagen/favicon.jpg') }}">
-    <link rel="shortcut icon" sizes="192x192" href="{{ asset('../imagen/favicon.jpg') }}">
+     <link rel="shortcut icon" sizes="192x192" href="{{ asset('../imagen/favicon.jpg') }}">
 
 </head>
 
@@ -35,13 +35,13 @@
         <div id = "cuerpo2" >
 
             <aside class="responsive-banner">
-                <img src="https://24h24l.org/images/banner-hardware.png" style = "height: : 100px; height: 215px;  object-fit: cover;" />
+                <img class = "banner" src="https://24h24l.org/images/banner-hardware.png" />
             </aside>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
                     <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+    <img class = "logo" src="../imagen/favicon.jpg" alt="">
   </a>
                     <a class="navbar-brand" href="/noticiaIndex">
                         {{ config('app.name', 'Laravel') }}

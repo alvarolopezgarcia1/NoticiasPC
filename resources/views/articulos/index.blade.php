@@ -84,10 +84,10 @@
                      </div>
                  </div>
              </div>
-         </div>
+         </div>http://localhost:8000/imagen/banner2.jpg
      </div>
 
-     <div class = "buscador" style = "width: 72vh; margin : 0 auto"> 
+     <div class = "buscador"> 
 
         <div class = "input-group" >
 

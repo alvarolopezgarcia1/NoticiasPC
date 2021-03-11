@@ -38,8 +38,25 @@ class ArticuloController extends Controller
 
     $com = Articulo::find($id)->comentarios;
 
+    $miarray = array();
 
-    return view('articulos/showArticulo', compact('articulo', 'nombre', 'nombreCategoria', 'categorias', 'com'));
+
+        foreach($com as $comm){
+
+        $a = $comm->id;
+
+        $com2 = Comentario_Articulo::find($a)->usuario;
+
+        $nom = $com2->name;
+
+        $miarray[] = $nom;
+
+        
+        }
+
+
+
+    return view('articulos/showArticulo', compact('articulo', 'nombre', 'nombreCategoria', 'categorias', 'com', 'miarray'));
 
   }
   
@@ -177,6 +194,21 @@ class ArticuloController extends Controller
 
   }
 
+   public function apiArticulos(Request $req){
+
+        $articulos = Articulo::all();
+
+        return response()->json($articulos,200);
+
+    }
+
+    public function apiArticulo($id){
+
+        $articulo = Articulo::find($id);
+
+        return response()->json($articulo,200);
+
+    }
 
 
 }

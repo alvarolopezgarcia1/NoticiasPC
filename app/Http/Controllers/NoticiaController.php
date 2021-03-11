@@ -45,7 +45,6 @@ class NoticiaController extends Controller
         $miarray = array();
 
 
-
         foreach($com as $comm){
 
         $a = $comm->id;
@@ -60,7 +59,7 @@ class NoticiaController extends Controller
 
         }
 
-        var_dump($miarray);
+        //var_dump($miarray);
 
 
         return view('noticias/showNoticia', compact('nombre','noticia', 'categorias','nombreCategoria', 'com', 'miarray' ));
@@ -195,6 +194,22 @@ class NoticiaController extends Controller
         
 
         return redirect()->route('noticia.show', ['id' => $idNoticia]);
+
+    }
+
+    public function apiNoticias(Request $req){
+
+        $noticias = Noticia::all();
+
+        return response()->json($noticias,200);
+
+    }
+
+    public function apiNoticia($id){
+
+        $noticia = Noticia::find($id);
+
+        return response()->json($noticia,200);
 
     }
 

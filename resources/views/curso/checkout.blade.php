@@ -12,9 +12,9 @@
         </button>
     </div>
     <div class="row" style="margin : 5vh;">
-       <div class="col-sm-12">
-           @if (count(Cart::getContent()))
-           <table class="table table-striped">
+     <div class="col-sm-12">
+         @if (count(Cart::getContent()))
+         <table class="table table-striped">
             <thead>
                 <th>ID</th>
                 <th>NOMBRE</th>
@@ -38,24 +38,49 @@
                 </tr>
                 
                 @endforeach
-                <tr>
-                    <td><strong>TOTAL : </strong></td>
-                    <td></td>
-                    <td>{{$total}} €</td>
-                    <td><a href="compraRealizada" class="btn btn-primary">Comprar</a></td>
-                    <td></td>
-                </tr>
-                
-            </tbody>
-        </table>
 
-        @else
-        <div class="row" style="margin : 5vh;"><h1>Nada en el carrito</h1></div>
-        
-        @endif
-
+                <div class="modal" id="miModal" tabindex="-1" role="dialog">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">¡Compra realizada con éxito!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Recibirá su clave para acceder al curso en su correo</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
+    <tr>
+        <td><strong>TOTAL : </strong></td>
+        <td></td>
+        <td>{{$total}} €</td>
+        <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#miModal">
+            Comprar
+        </button></td>
+        <td></td>
+    </tr>
+
+
+
+
+</tbody>
+</table>
+
+@else
+<div class="row" style="margin : 5vh;"><h1>Nada en el carrito</h1></div>
+
+@endif
+
+</div>
+
 </div>
 </div>
 @endsection

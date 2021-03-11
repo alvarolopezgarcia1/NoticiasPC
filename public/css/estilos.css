@@ -127,3 +127,24 @@ img {
   .com{
     margin-left : 1vh;
   }
+
+  .logo {
+
+    width: 40px; 
+    height: 40px;
+
+  }
+
+  .banner {
+
+    height: 100px; 
+    height: 215px;
+    object-fit: cover;
+  }
+
+  .buscador {
+
+    width: 50%; 
+    margin : 0 auto
+
+  }

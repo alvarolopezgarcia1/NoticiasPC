@@ -35,9 +35,26 @@ class AnalisisController extends Controller
     $nombreCategoria = Analisis::find($id)->categorias->titulo;
     
     $com = Analisis::find($id)->comentarios;
+
+     $miarray = array();
+
+
+        foreach($com as $comm){
+
+        $a = $comm->id;
+
+        $com2 = Comentario_Analisis::find($a)->usuario;
+
+        $nom = $com2->name;
+
+        $miarray[] = $nom;
+
+        
+
+        }
     
     
-    return view('analisis/showAnalisis', compact('analisis', 'nombre','nombreCategoria','categorias', 'com'));
+    return view('analisis/showAnalisis', compact('analisis', 'nombre','nombreCategoria','categorias', 'com', 'miarray'));
 
   }
 // Create an analysis   
@@ -173,5 +190,22 @@ class AnalisisController extends Controller
     return redirect()->route('analisis.show', ['id' => $idAnalisis]);
 
   }
+
+   public function apiAnalisis(Request $req){
+
+        $analisis = Analisis::all();
+
+        return response()->json($analisis,200);
+
+    }
+
+    public function apiAnalisi($id){
+
+        $analisi = Analisis::find($id);
+
+        return response()->json($analisi,200);
+
+    }
+
 
 }
