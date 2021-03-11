@@ -101,7 +101,7 @@ Route::get('/usuarioIndex/buscador' , [UsuarioController::class, 'buscador'])->m
 //Show users
 Route::get('/usuariosIndex' , [UsuarioController::class, 'index'])->middleware('auth');
 //Delete user
-Route::get('/destroyUsuario/{id}', [UsuarioController::class, 'destroyUsuario'])->name('usuario.delete')->middleware('admin');
+Route::get('/destroyUsuario/{id}', [UsuarioController::class, 'destroyUsuario'])->name('usuario.delete')->middleware('auth');
 //Show a user
 Route::get('usuarioShow/{id}' , [UsuarioController::class, 'showUsuario'])->name('usuario.show')->middleware('auth');
 //Update a user
