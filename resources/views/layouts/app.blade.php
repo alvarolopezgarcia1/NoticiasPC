@@ -28,8 +28,10 @@
 
 
 <body id = "body">
+ <div class = "barras">   
  <img class="bannerIzq" src="../imagen/banner2.jpg">
  <img class="bannerDer" src="../imagen/banner2.jpg">
+</div>
  <div id = "cuerpo">
     <div id= "app" >
         <div id = "cuerpo2" >
