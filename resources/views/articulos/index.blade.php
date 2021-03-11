@@ -84,7 +84,7 @@
                      </div>
                  </div>
              </div>
-         </div>http://localhost:8000/imagen/banner2.jpg
+         </div>
      </div>
 
      <div class = "buscador"> 
