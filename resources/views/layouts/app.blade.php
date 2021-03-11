@@ -21,18 +21,18 @@
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
 
 
-     <link rel="shortcut icon" type="image/png" href="{{ asset('../imagen/favicon.jpg') }}">
-     <link rel="shortcut icon" sizes="192x192" href="{{ asset('../imagen/favicon.jpg') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('../imagen/favicon.jpg') }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ asset('../imagen/favicon.jpg') }}">
 
 </head>
 
 
 <body id = "body">
- <div class = "barras">   
- <img class="bannerIzq" src="../imagen/banner2.jpg">
- <img class="bannerDer" src="../imagen/banner2.jpg">
-</div>
- <div id = "cuerpo">
+   <div class = "barras">   
+       <img class="bannerIzq" src="../imagen/banner2.jpg">
+       <img class="bannerDer" src="../imagen/banner2.jpg">
+   </div>
+   <div id = "cuerpo">
     <div id= "app" >
         <div id = "cuerpo2" >
 
@@ -42,9 +42,9 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
                     <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img class = "logo" src="../imagen/favicon.jpg" alt="">
-  </a>
+                      <a class="navbar-brand" href="#">
+                        <img class = "logo" src="../imagen/favicon.jpg" alt="">
+                    </a>
                     <a class="navbar-brand" href="/noticiaIndex">
                         {{ config('app.name', 'Laravel') }}
                     </a>
