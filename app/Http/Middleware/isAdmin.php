@@ -6,14 +6,5 @@ use Closure;
 use Auth;
 use Illuminate\Http\Request;
 
-class IsAdmin
-{
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
- 
-}
+
+
