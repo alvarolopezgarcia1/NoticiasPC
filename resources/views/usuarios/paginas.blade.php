@@ -1,5 +1,5 @@
 	@if (count($usuarios))
-  <table class="table table-striped">
+  <table class="table table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -29,7 +29,7 @@
       @endif
       <td>{{ $usuario->created_at}}</td>
       <td> 
-          <button class="btn btn-danger btn-lg" style="margin-right : 5vh;">
+          <button class="btn btn-danger btn-lg btn1 " style="margin-right : 5vh;">
           <a href="/destroyUsuario/{{ $usuario->idUsu }}" data-toggle="tooltip" data-placement="top" title="borrar" style="color : white;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
           <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -39,7 +39,7 @@
           </button></td>
 
       <td>
-          <button class="btn btn-info btn-lg" style="margin-right : 1vh;" onclick="show()">
+          <button class="btn btn-info btn-lg btn1" style="margin-right : 1vh;" onclick="show()">
           <a href="/usuarioShow/{{ $usuario->idUsu }}" data-toggle="tooltip" data-placement="top" title="borrar" style="color : white;">  
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
