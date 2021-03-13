@@ -104,7 +104,7 @@ img {
 }
 
 
-@media (max-width: 1095px) {
+@media (max-width: 2300px) {
 
   .table{
     width : 100%;
@@ -118,7 +118,7 @@ img {
 
 .btn1{
   width: 200px;
-  height: 35px;
+  height: 35px;S
   margin-left: 1vh;
   margin-bottom : 2vh;
   margin-top : 1vh;
