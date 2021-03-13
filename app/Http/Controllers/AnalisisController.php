@@ -12,18 +12,25 @@ use App\Models\Comentario_Analisis;
 
 class AnalisisController extends Controller
 {
-//see all the analyzes
-  public function index(){
+   
+   /*
+   * see all the analyzes
+   * @return type
+   */
+    public function index(){
     $analisis = Analisis::orderBy('created_at','desc')->simplePaginate(9);
-
 
     $categorias = Categoria::all();
 
     return view('analisis/index', compact('analisis', 'categorias') );
-
   }
-//See an analysis
-  public function showAnalisis($id){
+
+   /*
+   * See an analysis
+   * @param type $id 
+   * @return type
+   */
+   public function showAnalisis($id){
 
            //saca el nombre del autor
     $nombre = Analisis::find($id)->usuarios->name;
@@ -36,38 +43,44 @@ class AnalisisController extends Controller
     
     $com = Analisis::find($id)->comentarios;
 
-     $miarray = array();
+    $miarray = array();
 
 
-        foreach($com as $comm){
+    foreach($com as $comm){
 
-        $a = $comm->id;
+      $a = $comm->id;
 
-        $com2 = Comentario_Analisis::find($a)->usuario;
+      $com2 = Comentario_Analisis::find($a)->usuario;
 
-        $nom = $com2->name;
+      $nom = $com2->name;
 
-        $miarray[] = $nom;
+      $miarray[] = $nom;
 
-        
+    }
 
-        }
-    
-    
     return view('analisis/showAnalisis', compact('analisis', 'nombre','nombreCategoria','categorias', 'com', 'miarray'));
 
   }
-// Create an analysis   
+  /*
+   * Create an analysis  
+   * @param Request $request 
+   * @return type
+   */
   public function buscador(Request $request){
-   
+
     $analisis = Analisis::where("titulo", 'like', $request->texto."%")->take(10)->get();
 
     return view('analisis.paginas', compact('analisis') );
 
   }
 
-  public static function createAnalisis(Request $request){
-   
+   /*
+   * create an analysis
+   * @param Request $request 
+   * @return type
+   */
+   public static function createAnalisis(Request $request){
+
     $request->validate([
      'titulo' => 'required',
      'descripcion' => 'required',
@@ -88,23 +101,31 @@ class AnalisisController extends Controller
 
     $newAnalisis->save();
 
-    
-
     return redirect('/analisisIndex');
 
   }
-//Delete an analysis
-  public static function destroyAnalisis($id){
+
+   /*
+   * Delete an analysis
+   * @param type $id 
+   * @return type
+   */
+   public static function destroyAnalisis($id){
     $analisis = analisis::find($id);
     $analisis->delete();
 
     return redirect('/analisisIndex');
 
   }
-//Update an analysis
+
+   /*
+   * Update an analysis
+   * @param Request $request 
+   * @return type
+   */
   public static function updateAnalisis(Request $request){
     $request->validate([
-     
+
      'titulo' => 'required',
      'descripcion' => 'required',
      'imagen' => 'required',
@@ -129,9 +150,13 @@ class AnalisisController extends Controller
 
   }
 
-//Create an analysis
+   /*
+   * Create an analysis
+   * @param Request $request 
+   * @return type
+   */
   public static function createComAnalisis(Request $request){
-   
+
     $request->validate([
 
      'idUsu' => 'required',
@@ -154,22 +179,30 @@ class AnalisisController extends Controller
     return redirect()->route('analisis.show', ['id' => $id]);
 
   }
-
-//Destroy an analysis
+   /*
+   * Destroy an analysis
+   * @param type $id 
+   * @param type $idAna 
+   * @return type
+   */
   public static function destroyComAnalisis($id, $idAna){
     $comentarioAnalisis = Comentario_Analisis::find($id);
     $comentarioAnalisis->delete();
 
     $idAnalisis = $idAna;
 
-    
     return redirect()->route('analisis.show', ['id' => $idAnalisis]);
 
   }
 
+   /*
+   * Update an analysis
+   * @param Request $request 
+   * @return type
+   */
   public static function updateComAnalisis(Request $request){
     $request->validate([
-     
+
      'comentario' => 'required',
      'idAna' => 'required',
      'idUsu' => 'required',
@@ -191,21 +224,21 @@ class AnalisisController extends Controller
 
   }
 
-   public function apiAnalisis(Request $req){
+  public function apiAnalisis(Request $req){
 
-        $analisis = Analisis::all();
+    $analisis = Analisis::all();
 
-        return response()->json($analisis,200);
+    return response()->json($analisis,200);
 
-    }
+  }
 
-    public function apiAnalisi($id){
+  public function apiAnalisi($id){
 
-        $analisi = Analisis::find($id);
+    $analisi = Analisis::find($id);
 
-        return response()->json($analisi,200);
+    return response()->json($analisi,200);
 
-    }
+  }
 
 
 }

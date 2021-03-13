@@ -96,7 +96,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <button class="btn btn-primary" type="submit">Aceptar</button>
+        <button class="btn btn-primary btn1" type="submit">Aceptar</button>
       </div>
     </div>
   </form>
@@ -127,7 +127,8 @@
 
   <div class="row">
     <div class="col-md-6">
-      <button class="btn btn-primary" type="submit">Aceptar</button>
+      <p></p>
+      <button class="btn btn-primary btn1" type="submit">Aceptar</button>
     </div>
   </div> <br>
 
@@ -194,7 +195,7 @@
 
           <div class="row">
             <div class="col-md-6">
-              <button class="btn btn-primary" type="submit">Modificar comentario</button>
+              <button class="btn btn-primary btn1" type="submit">Modificar comentario</button>
             </div>
           </div> <br>
 

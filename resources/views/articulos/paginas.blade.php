@@ -1,7 +1,7 @@
 @if (count($articulo))
 <div class="row col-md-14 justify-content-center">
 	@foreach($articulo as $articulo )
-	<div id ="card2" class="card">
+	<div id ="card2">
 
 		
 		<a href = "/articuloShow/{{ $articulo->idArt }}" ><img class="card-img-top cardImg1" href = "/articuloShow/{{ $articulo->idArt }}" src="{{$articulo->imagen}}" alt="Card image cap"></a>

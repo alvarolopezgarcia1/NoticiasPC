@@ -76,7 +76,7 @@ Route::get('analisisShow/{id}' , [AnalisisController::class, 'showAnalisis'])->n
 //create an analysis
 Route::post('/createAnalisis', [AnalisisController::class, 'createAnalisis'])->name('analisis.create')->middleware('auth');
 //delete an analysis
-Route::get('/destroyAnalisis/{id}', [AnalisisController::class, 'destroyAnalisis'])->name('analisis.delete')->middleware('auth','admin');
+Route::get('/destroyAnalisis/{id}', [AnalisisController::class, 'destroyAnalisis'])->name('analisis.delete')->middleware('auth');
 //update an analysis
 Route::post('/updateAnalisis', [AnalisisController::class, 'updateAnalisis'])->name('analisis.update')->middleware('auth');
 //Create a comment
@@ -118,7 +118,3 @@ Route::get('/showCursos', [CursoController::class, 'showCurso'] )->middleware('a
 Route::get('/cursoDetalles/{id}', [CursoController::class, 'showDetalles'] )->middleware('auth');
 Route::get('/cursoCarrito/{id}', [CursoController::class, 'addCarrito'] )->middleware('auth');
 Route::get('/compraRealizada', [CursoController::class, 'compraRealizada'] )->middleware('auth');
-
-
-
-

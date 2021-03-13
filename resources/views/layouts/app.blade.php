@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,11 +29,11 @@
 
 
 <body id = "body">
-   <div class = "barras">   
-       <img class="bannerIzq" src="../imagen/banner2.jpg">
-       <img class="bannerDer" src="../imagen/banner2.jpg">
-   </div>
-   <div id = "cuerpo">
+ <div class = "barras">   
+     <img class="bannerIzq" src="../imagen/banner2.jpg">
+     <img class="bannerDer" src="../imagen/banner2.jpg">
+ </div>
+ <div id = "cuerpo">
     <div id= "app" >
         <div id = "cuerpo2" >
 
@@ -132,7 +133,16 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer>
+            <p>
+                <p style="color: white;">        
+                    Todos los derechos reservados 2021, NOTICIAS PC. Diseñado por: Álvaro López.
+                </p>
+            </p>
+        </footer>
     </div>
+
+
 </div>
 </div>
 

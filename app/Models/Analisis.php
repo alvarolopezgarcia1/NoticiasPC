@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Analisis extends Model
 {
-    //relate to the analysis table
+ 
+     /* 
+     *relate to the analysis table
+     * @var type
+     */
     protected $table = 'analisis';
 
    //relate to custom id
@@ -29,6 +33,11 @@ class Analisis extends Model
     }
 
     //relates to the comments table
+
+    /*
+     * relates to the comments table
+     * @return void
+     */
     public function comentarios(){
 
         return $this->hasMany('App\Models\Comentario_Analisis', 'idAna');

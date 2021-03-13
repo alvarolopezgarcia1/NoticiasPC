@@ -15,7 +15,10 @@
             <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
         </svg>
         <label for="titulo">Crear nueva noticia</label>
+
     </button>
+
+    <p></p>
     
 
     <form id="form" action="{{ route('noticia.create') }}" method="POST" style="display : none;" enctype="multipart/form-data">
