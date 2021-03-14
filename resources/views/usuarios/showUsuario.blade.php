@@ -65,12 +65,16 @@
                 </div>
         @endif
 
+         @if((Auth::user()->rol == 1))   
+
                 <div class="row">
                     <div class="col-md-6">
                     <button class="btn btn-primary" type="submit">Aplicar cambios</button>
                     </div>
                 </div>
         </form>
+
+         @endif
 
     </div>
 

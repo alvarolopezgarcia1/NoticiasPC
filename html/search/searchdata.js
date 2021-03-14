@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "$ilrs",
+  0: "$ilrsw",
   1: "l",
   2: "rs",
   3: "$i",
-  4: "r"
+  4: "w"
 };
 
 var indexSectionNames =
@@ -18,10 +18,10 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "All",
+  0: "Todo",
   1: "Namespaces",
-  2: "Files",
+  2: "Archivos",
   3: "Variables",
-  4: "Pages"
+  4: "Páginas"
 };
 
