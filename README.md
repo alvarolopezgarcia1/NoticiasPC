@@ -1,6 +1,6 @@
-(https://raw.githubusercontent.com/parzibyte/WaterPy/master/assets/ImagenV1.png)
+(https://raw.githubusercontent.com/NoticiasPC/app/public/imagen/Cap_base_de_datos.PNG)
 <p align="center">
 
-##  What is OTICIAS PC?
+##  What is Noticias PC?
 
-##  
+##  Database Schema
