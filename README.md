@@ -38,14 +38,18 @@ The administrator or administrators also have access to the list of users, they 
 
 ##Preview
 News Page:
+![alt text]https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/pag%20principal.PNG)
 
 News:
+![alt text]https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/new.PNG)
 
 Comments:
+![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/coment.PNG)
 
 Courses page:
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/cursos.PNG)
 
 Administrator panel:
+![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/usuarios.PNG)
 
 
