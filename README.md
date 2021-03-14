@@ -1,5 +1,4 @@
-
-<p align="center">
+![alt text]https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/favicon.jpg
 
 ##  What is Noticias PC?
 
