@@ -22,7 +22,7 @@ class AnalisisController extends Controller
    * @return type
    */
    public function index(){
-    $analisis = Analisis::orderBy('created_at','desc')->simplePaginate(9);
+    $analisis = Analisis::orderBy('created_at','desc')->simplePaginate(6);
 
     $categorias = Categoria::all();
 

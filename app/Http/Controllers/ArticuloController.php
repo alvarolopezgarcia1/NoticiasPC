@@ -22,7 +22,7 @@ class ArticuloController extends Controller
    * @return type
    */
   public function index(){
-    $articulo = Articulo::orderBy('created_at','desc')->simplePaginate(9);
+    $articulo = Articulo::orderBy('created_at','desc')->simplePaginate(6);
 
 
     $categorias = Categoria::all();
