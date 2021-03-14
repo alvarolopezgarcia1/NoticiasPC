@@ -36,12 +36,12 @@ The administrator or administrators also have access to the list of users, they 
 ##  Database Schema
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/Cap_base_de_datos.PNG?raw=true)
 
-##Preview
-News Page:
-![alt text]https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/pag%20principal.PNG)
+## Preview
+<h4> News Page: </h4>
+![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/pag%20principal.PNG)
 
 News:
-![alt text]https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/new.PNG)
+![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/new.PNG)
 
 Comments:
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/coment.PNG)
