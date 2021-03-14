@@ -1,7 +1,7 @@
 ##  What is Noticias PC?
 
 <p>
-PC News is a hardware, video game and technology news website in general.
+Noticias PC is a hardware, video game and technology news website in general.
 </p>
 
 ## What can I do on the page?
@@ -14,9 +14,24 @@ The administrator or administrators also have access to the list of users, they 
 
 ## Roles
 <ul>
-    <li> Administrator </li>
-Editor
-User
+    <li> Administrator: You have access to everything and can delete or modify your own publications and those of other publishers.
+         It also has access to the entire list of users and can make modifications. </li>
+    <li> Editor: You do not have access to the data of other users and can only delete or modify your own publications.</li>
+    <li> User: You have access to all publications and purchases, but you only have the ability to modify or delete your comments and personal data.</li>
 </ul>
+
+## Accounts with different permissions to test the app
+<ul>
+    <li>
+        Administrator: admin@gmail.com Password: pepepepe
+    </li>  
+    <li>
+        Editor: editor@editor.es Password: 12345678
+    </li>
+    <li>
+        User: alvaro@alvaro.com Password 12345678
+    </li>     
+</ul>
+
 ##  Database Schema
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/Cap_base_de_datos.PNG?raw=true)
