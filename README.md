@@ -29,7 +29,7 @@ The administrator or administrators also have access to the list of users, they 
         Editor: editor@editor.es Password: 12345678
     </li>
     <li>
-        User: alvaro@alvaro.com Password 12345678
+        User: alvaro@alvaro.com Password: 12345678
     </li>     
 </ul>
 
