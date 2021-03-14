@@ -37,10 +37,9 @@ The administrator or administrators also have access to the list of users, they 
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/Cap_base_de_datos.PNG?raw=true)
 
 ## Preview
+
 <h4> News Page: </h4>
-
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/pag%20principal.PNG)
-
 
 <h4>News: </h4>
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/new.PNG)
