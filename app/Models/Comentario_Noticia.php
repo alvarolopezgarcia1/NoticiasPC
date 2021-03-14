@@ -1,5 +1,9 @@
 <?php
 
+/**
+* @author Álvaro López
+*/
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,15 +19,20 @@ class Comentario_Noticia extends Model
     //relates to custom id
     protected $primaryKey = 'id';
 
-    
-    //relates to the user table
+    /**
+     * relates to the user table
+     * @return type
+     */
     public function usuario(){
 
         return $this->belongsTo('App\Models\User' , 'idUsu');
 
     }
 
-    //relates to the new table
+    /**
+     * relates to the new table 
+     * @return type
+     */
     public function noticia(){
 
         return $this->hasMany('App\Models\Noticia' , 'idNot');

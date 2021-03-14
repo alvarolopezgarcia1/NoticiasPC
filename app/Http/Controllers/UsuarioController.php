@@ -1,5 +1,9 @@
 <?php
 
+/**
+* @author Álvaro López
+*/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,8 +16,10 @@ use App\Models\User;
 
 class UsuarioController extends Controller
 {
-
-   //Show all users
+    /**
+     * Show all users 
+     * @return type
+     */
     public function index(){
        
         $usuarios = User::orderBy('name','asc')->simplePaginate(50);
@@ -24,7 +30,11 @@ class UsuarioController extends Controller
 
     }
 
-    //seeker
+    /**
+     * seeker
+     * @param Request $request 
+     * @return type
+     */
     public function buscador(Request $request){
        
         $usuarios = User::where("name", 'like', $request->texto."%")->take(10)->get();
@@ -33,7 +43,11 @@ class UsuarioController extends Controller
 
     }    
 
-    //delete a user
+    /**
+     * delete a user
+     * @param type $id 
+     * @return type
+     */
     public static function destroyUsuario($id){
         $usuarios = User::find($id);
         $usuarios->delete();
@@ -42,17 +56,24 @@ class UsuarioController extends Controller
 
     }   
 
-    //show a user
+    /**
+    *  show a user
+    * @param type $id 
+    * @return type
+    */    
     public function showUsuario($id){
 
         $usuario = User::find($id);
 
-        
         return view('usuarios/showUsuario', compact('usuario'));
 
     }
 
-    //update a user
+    /**
+     * update a user
+     * @param Request $request 
+     * @return type
+     */
     public static function updateUsuario(Request $request){
         
         $request->validate([
@@ -68,10 +89,8 @@ class UsuarioController extends Controller
         $updateUsuario->email = $request->input('email');
         $updateUsuario->rol = $request->input('rol');         
         
-        
         $updateUsuario->save();
         
-
         return redirect()->route('usuario.show', ['id' => $id]);
 
     }

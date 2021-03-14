@@ -1,5 +1,9 @@
 <?php
 
+/**
+* @author Álvaro López
+*/
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,33 +12,33 @@ use Illuminate\Database\Eloquent\Model;
 class Analisis extends Model
 {
  
-     /* 
-     *relate to the analysis table
-     * @var type
-     */
+
     protected $table = 'analisis';
 
-   //relate to custom id
     protected $primaryKey = 'idAna';
 
-    
-    //relates to the users table
+
+    /**
+     * relate to custom id
+     * @return type
+     */
     public function usuarios(){
 
         return $this->belongsTo('App\Models\User' , 'idUsu');
 
     }
-
-    //relates to the categories table
+    
+    /**
+     * relates to the categories table 
+     * @return type
+     */
     public function categorias(){
 
         return $this->belongsTo('App\Models\Categoria' , 'idCat');
 
     }
 
-    //relates to the comments table
-
-    /*
+     /**
      * relates to the comments table
      * @return void
      */

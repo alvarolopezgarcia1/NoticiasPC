@@ -1,5 +1,9 @@
 <?php
 
+/**
+* @author Álvaro López
+*/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,12 +16,12 @@ use App\Models\Comentario_Analisis;
 
 class AnalisisController extends Controller
 {
-   
-   /*
+ 
+   /**
    * see all the analyzes
    * @return type
    */
-    public function index(){
+   public function index(){
     $analisis = Analisis::orderBy('created_at','desc')->simplePaginate(9);
 
     $categorias = Categoria::all();
@@ -25,7 +29,7 @@ class AnalisisController extends Controller
     return view('analisis/index', compact('analisis', 'categorias') );
   }
 
-   /*
+   /**
    * See an analysis
    * @param type $id 
    * @return type
@@ -61,7 +65,7 @@ class AnalisisController extends Controller
     return view('analisis/showAnalisis', compact('analisis', 'nombre','nombreCategoria','categorias', 'com', 'miarray'));
 
   }
-  /*
+  /**
    * Create an analysis  
    * @param Request $request 
    * @return type
@@ -74,7 +78,7 @@ class AnalisisController extends Controller
 
   }
 
-   /*
+   /**
    * create an analysis
    * @param Request $request 
    * @return type
@@ -105,7 +109,7 @@ class AnalisisController extends Controller
 
   }
 
-   /*
+   /**
    * Delete an analysis
    * @param type $id 
    * @return type
@@ -118,12 +122,12 @@ class AnalisisController extends Controller
 
   }
 
-   /*
+   /**
    * Update an analysis
    * @param Request $request 
    * @return type
    */
-  public static function updateAnalisis(Request $request){
+   public static function updateAnalisis(Request $request){
     $request->validate([
 
      'titulo' => 'required',
@@ -150,12 +154,12 @@ class AnalisisController extends Controller
 
   }
 
-   /*
+   /**
    * Create an analysis
    * @param Request $request 
    * @return type
    */
-  public static function createComAnalisis(Request $request){
+   public static function createComAnalisis(Request $request){
 
     $request->validate([
 
@@ -179,13 +183,13 @@ class AnalisisController extends Controller
     return redirect()->route('analisis.show', ['id' => $id]);
 
   }
-   /*
+   /**
    * Destroy an analysis
    * @param type $id 
    * @param type $idAna 
    * @return type
    */
-  public static function destroyComAnalisis($id, $idAna){
+   public static function destroyComAnalisis($id, $idAna){
     $comentarioAnalisis = Comentario_Analisis::find($id);
     $comentarioAnalisis->delete();
 
@@ -195,12 +199,12 @@ class AnalisisController extends Controller
 
   }
 
-   /*
+   /**
    * Update an analysis
    * @param Request $request 
    * @return type
    */
-  public static function updateComAnalisis(Request $request){
+   public static function updateComAnalisis(Request $request){
     $request->validate([
 
      'comentario' => 'required',
@@ -224,6 +228,11 @@ class AnalisisController extends Controller
 
   }
 
+  /**
+   * api 
+   * @param Request $req 
+   * @return view
+  */
   public function apiAnalisis(Request $req){
 
     $analisis = Analisis::all();

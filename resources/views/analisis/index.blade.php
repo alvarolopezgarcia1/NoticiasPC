@@ -53,7 +53,7 @@
             
         </div>
         <div class="row">
-           <div class="col-md-4">
+         <div class="col-md-4">
             <label for="idCat">Categoria</label>
             <select type="integer" class="form-control" id="idCat" name="idCat"required>
                 @foreach($categorias as $categoria)
@@ -83,20 +83,21 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hD35FdHysTg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                        </div>
-                        <div class="carousel-item">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/-yCN9J6f_eM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="carousel-item">
-                           <iframe width="560" height="315" src="https://www.youtube.com/embed/c1Y77FCYmMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                       </div>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/_pvLC4EL6AY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                      </div>
+                     <div class="carousel-item">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/4vzhlkIU-Xk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   </div>
+                   <div class="carousel-item">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/TnG0vDccLHY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                    </div>
                </div>
            </div>
        </div>
    </div>
+</div>
+</div>
 
-   <div class = "buscador"> 
+<div class = "buscador"> 
 
     <div class = "input-group" >
 

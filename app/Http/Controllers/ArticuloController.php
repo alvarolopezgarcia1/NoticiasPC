@@ -1,9 +1,12 @@
 <?php
 
+/**
+* @author Álvaro López
+*/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 
 use App\Models\User;
 use App\Models\Categoria;
@@ -14,6 +17,10 @@ use App\Models\Comentario_Articulo;
 
 class ArticuloController extends Controller
 {
+  /**
+   * Show all articles  
+   * @return type
+   */
   public function index(){
     $articulo = Articulo::orderBy('created_at','desc')->simplePaginate(9);
 
@@ -23,8 +30,13 @@ class ArticuloController extends Controller
     return view('articulos/index', compact('articulo', 'categorias') );
 
   }
-//Show an article
-  public function showArticulo($id){
+
+   /**
+   * Show an article
+   * @param type $id 
+   * @return type
+   */
+   public function showArticulo($id){
 
     $articulo = Articulo::find($id);
 
@@ -41,37 +53,38 @@ class ArticuloController extends Controller
     $miarray = array();
 
 
-        foreach($com as $comm){
+    foreach($com as $comm){
 
-        $a = $comm->id;
-
-        $com2 = Comentario_Articulo::find($a)->usuario;
-
-        $nom = $com2->name;
-
-        $miarray[] = $nom;
-
-        
-        }
-
-
+      $a = $comm->id;
+      $com2 = Comentario_Articulo::find($a)->usuario;
+      $nom = $com2->name;
+      $miarray[] = $nom;
+    }
 
     return view('articulos/showArticulo', compact('articulo', 'nombre', 'nombreCategoria', 'categorias', 'com', 'miarray'));
 
   }
   
-  //Seeker   
-  public function buscador(Request $request){
-   
+   /**
+   * Seeker  
+   * @param Request $request 
+   * @return type
+   */ 
+   public function buscador(Request $request){
+
     $articulo = Articulo::where("titulo", 'like', $request->texto."%")->take(10)->get();
 
     return view('articulos.paginas', compact('articulo') );
 
   }
 
- //Crreate an article
+  /**
+   * Create an article
+   * @param Request $request 
+   * @return type
+   */
   public static function createArticulo(Request $request){
-   
+
     $request->validate([
      'titulo' => 'required',
      'descripcion' => 'required',
@@ -95,7 +108,11 @@ class ArticuloController extends Controller
 
   }
 
-  //delete an article
+  /**
+   * delete an article 
+   * @param type $id 
+   * @return type
+   */
   public static function destroyArticulo($id){
     $articulo = articulo::find($id);
     $articulo->delete();
@@ -104,10 +121,14 @@ class ArticuloController extends Controller
 
   }
 
-  //update an article
+  /**
+   * update an article 
+   * @param Request $request 
+   * @return type
+   */
   public static function updateArticulo(Request $request){
     $request->validate([
-     
+
      'titulo' => 'required',
      'descripcion' => 'required',
      'imagen' => 'required',
@@ -131,9 +152,13 @@ class ArticuloController extends Controller
 
   }
 
-  //create an article
+  /**
+   * create an article 
+   * @param Request $request 
+   * @return type
+   */  
   public static function createComArticulo(Request $request){
-   
+
     $request->validate([
 
      'idUsu' => 'required',
@@ -152,27 +177,34 @@ class ArticuloController extends Controller
 
     $id = $request->input('idArt');
 
-    
-    
     return redirect()->route('articulo.show', ['id' => $id]);
 
   }
 
-  //destroy an article
+  /**
+   * destroy an article 
+   * @param type $id 
+   * @param type $idArt 
+   * @return type
+   */
   public static function destroyComArticulo($id, $idArt){
     $comentarioArticulo = Comentario_Articulo::find($id);
     $comentarioArticulo->delete();
 
     $idArticulo = $idArt;
 
-    
     return redirect()->route('articulo.show', ['id' => $idArticulo]);
 
   }
 
-  public static function updateComArticulo(Request $request){
+   /**
+   * update an article 
+   * @param Request $request 
+   * @return type
+   */  
+   public static function updateComArticulo(Request $request){
     $request->validate([
-     
+
      'comentario' => 'required',
      'idArt' => 'required',
      'idUsu' => 'required',
@@ -194,21 +226,31 @@ class ArticuloController extends Controller
 
   }
 
-   public function apiArticulos(Request $req){
+  /**
+   * api
+   * @param Request $req 
+   * @return type
+   */
+  public function apiArticulos(Request $req){
 
-        $articulos = Articulo::all();
+    $articulos = Articulo::all();
 
-        return response()->json($articulos,200);
+    return response()->json($articulos,200);
 
-    }
+  }
 
-    public function apiArticulo($id){
+  /**
+   * api
+   * @param type $id 
+   * @return type
+   */  
+  public function apiArticulo($id){
 
-        $articulo = Articulo::find($id);
+    $articulo = Articulo::find($id);
 
-        return response()->json($articulo,200);
+    return response()->json($articulo,200);
 
-    }
+  }
 
 
 }

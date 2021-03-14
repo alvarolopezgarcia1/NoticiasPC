@@ -1,5 +1,9 @@
 <?php
 
+/**
+* @author Álvaro López
+*/
+
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
