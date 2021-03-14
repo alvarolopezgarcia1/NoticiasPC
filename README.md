@@ -35,3 +35,17 @@ The administrator or administrators also have access to the list of users, they 
 
 ##  Database Schema
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/Cap_base_de_datos.PNG?raw=true)
+
+##Preview
+News Page:
+
+News:
+
+Comments:
+
+Courses page:
+![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/cursos.PNG)
+
+Administrator panel:
+
+
