@@ -65,28 +65,21 @@ The administrator or administrators also have access to the list of users, they 
     <li>
     Laravel
     </li>
-    
     <li>
     PHP
     </li>
-    
     <li>
     Javascript
     </li>
-    
     <li>
     CSS
     </li>
-    
     <li>
     HTML
     </li>
-    
     <li>
     Bootstrap 4
     </li>
-    
-    
 </ul>    
 
 
