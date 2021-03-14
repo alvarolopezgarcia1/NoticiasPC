@@ -54,6 +54,10 @@ The administrator or administrators also have access to the list of users, they 
 
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/cursos.PNG)
 
+<h4> Shopping cart: </h4>
+
+![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/carrito.PNG)
+
 <h4>Administrator panel:</h4>
 
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/usuarios.PNG)
