@@ -45,10 +45,10 @@ The administrator or administrators also have access to the list of users, they 
    Components Docs:https://github.com/alvarolopezgarcia1/NoticiasPC
    </li>
     
-    <li>
-       - Example API (all the news): http://noticiaspc.herokuapp.com/api/apiNoticias
-       - Example API (an article): http://noticiaspc.herokuapp.com/api/apiArticulo/44
-    </li>
+   <li>
+      Example API (all the news): http://noticiaspc.herokuapp.com/api/apiNoticias
+      Example API (an article): http://noticiaspc.herokuapp.com/api/apiArticulo/44
+   </li>
   
 </ul>
 
