@@ -33,6 +33,56 @@ The administrator or administrators also have access to the list of users, they 
     </li>     
 </ul>
 
+## Urls
+
+<ul>
+
+   <li> 
+   App: http://noticiaspc.herokuapp.com/login
+   </li>
+   
+   <li>
+   Components Docs:https://github.com/alvarolopezgarcia1/NoticiasPC
+   </li>
+    
+   <li>
+      Example API (all the news): http://noticiaspc.herokuapp.com/api/apiNoticias
+   </li>
+   
+   <li>   
+      Example API (an article): http://noticiaspc.herokuapp.com/api/apiArticulo/44
+   </li>
+   
+   <li>
+     Video on Youtube explaining the app: 
+    </li>
+  
+</ul>
+
+## Technologies
+
+<ul>
+    <li>
+    Laravel
+    </li>
+    <li>
+    PHP
+    </li>
+    <li>
+    Javascript
+    </li>
+    <li>
+    CSS
+    </li>
+    <li>
+    HTML
+    </li>
+    <li>
+    Bootstrap 4
+    </li>
+</ul>    
+
+
 ##  Database Schema
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/Cap_base_de_datos.PNG?raw=true)
 
@@ -53,6 +103,10 @@ The administrator or administrators also have access to the list of users, they 
 <h4>Courses page:</h4>
 
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/cursos.PNG)
+
+<h4> Shopping cart: </h4>
+
+![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/carrito.PNG)
 
 <h4>Administrator panel:</h4>
 
