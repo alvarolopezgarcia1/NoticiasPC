@@ -74,7 +74,9 @@
                                 <a class = "nav-link" href="/showCursos">Cursos</a>
                             </li>
 
-                            
+                            <li class = "nav-item active">
+                                <a class = "nav-link" href="https://www.youtube.com/channel/UCnxubBCPlg0hHdZw_UehrTw">Youtube</a>
+                            </li>
 
                             @if(Auth::user()->rol == 1)
                             <li class = "nav-item active">
