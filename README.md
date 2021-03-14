@@ -52,10 +52,32 @@ The administrator or administrators also have access to the list of users, they 
    <li>   
       Example API (an article): http://noticiaspc.herokuapp.com/api/apiArticulo/44
    </li>
+   
+   <li>
+     Video on Youtube explaining the app: 
+    </li>
   
 </ul>
 
 ## Technologies
+
+<ul>
+    <li>
+    Laravel
+    </li>
+    <li>
+    PHP
+    </li>
+    Javascript
+    <li>
+    CSS
+    </li>
+    <li>
+    HTML
+    </li>
+    
+    
+</ul>    
 
 
 ##  Database Schema
