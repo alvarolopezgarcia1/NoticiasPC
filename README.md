@@ -33,6 +33,28 @@ The administrator or administrators also have access to the list of users, they 
     </li>     
 </ul>
 
+## Urls
+
+<ul>
+
+   </li> 
+   App: http://noticiaspc.herokuapp.com/login
+   </li>
+   
+   <li>
+   Components Docs:https://github.com/alvarolopezgarcia1/NoticiasPC
+   </li>
+    
+    <li>
+       - Example API (all the news): http://noticiaspc.herokuapp.com/api/apiNoticias
+       - Example API (an article): http://noticiaspc.herokuapp.com/api/apiArticulo/44
+    </li>
+  
+</ul>
+
+## Technologies
+
+
 ##  Database Schema
 ![alt text](https://github.com/alvarolopezgarcia1/NoticiasPC/blob/main/public/imagen/Cap_base_de_datos.PNG?raw=true)
 
