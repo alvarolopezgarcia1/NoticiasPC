@@ -37,7 +37,7 @@ The administrator or administrators also have access to the list of users, they 
 
 <ul>
 
-   </li> 
+   <li> 
    App: http://noticiaspc.herokuapp.com/login
    </li>
    
