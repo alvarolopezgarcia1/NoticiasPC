@@ -16,7 +16,7 @@ The administrator or administrators also have access to the list of users, they 
 <ul>
     <li> Administrator: You have access to everything and can delete or modify your own publications and those of other publishers.
          It also has access to the entire list of users and can make modifications. </li>
-    <li> Editor: You do not have access to the data of other users and can only delete or modify your own publications.</li>
+    <li> Editor: You do not have access to the data of other users and can only delete or modify publications.</li>
     <li> User: You have access to all publications and purchases, but you only have the ability to modify or delete your comments and personal data.</li>
 </ul>
 
