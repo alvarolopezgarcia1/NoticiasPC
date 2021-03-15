@@ -54,7 +54,7 @@ The administrator or administrators also have access to the list of users, they 
    </li>
    
    <li>
-     Video on Youtube explaining the app: 
+     Video on Youtube explaining the app: https://www.youtube.com/watch?v=ekiog0P6lWw&t=15s 
     </li>
   
 </ul>
